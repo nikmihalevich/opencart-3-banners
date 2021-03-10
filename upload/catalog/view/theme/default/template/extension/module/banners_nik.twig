@@ -1,0 +1,45 @@
+<style>
+  .banner-nik-container{{ module }} {
+    {% if width %}
+      width: {{ width }}{% if width_unit %}%{% else %}px{% endif %};
+    {% else %}
+      width: 100%;
+    {% endif %}
+    {% if height %}
+      height: {{ height }}{% if height_unit %}%{% else %}px{% endif %};
+    {% else %}
+      height: 100%;
+    {% endif %}
+    margin: 0 auto;
+    padding: 15px;
+  }
+  .banner-nik-inner{{ module }} {
+    background-size: cover;
+    background-image: url('{{ image }}');
+    background-repeat: no-repeat;
+    padding: {{ padding }};
+    width: 100%;
+    height: 100%;
+  }
+  .banner-btn-more {
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 15px;
+    font-size: 13px;
+    box-shadow: 1px 9px 8px 0px rgba(34, 60, 80, 0.2);
+    margin-top: 20px;
+  }
+</style>
+
+<div class="row">
+  {% if link %}<a href="{{ link }}">{% endif %}
+    <div class="banner-nik-container{{ module }} {{ class }}">
+      <div class="banner-nik-inner{{ module }}">
+        {{ text }}
+        <span class="banner-btn-more">
+          {{ btn_more }}
+        </span>
+      </div>
+    </div>
+  {% if link %}</a>{% endif %}
+</div>
