@@ -21,13 +21,8 @@
     width: 100%;
     height: 100%;
   }
-  .banner-btn-more {
-    background-color: #fff;
-    border-radius: 50px;
-    padding: 10px 15px;
-    font-size: 13px;
-    box-shadow: 1px 9px 8px 0px rgba(34, 60, 80, 0.2);
-    margin-top: 20px;
+  .banner-nik-inner{{ module }} img {
+    max-width: 100%;
   }
 </style>
 
@@ -36,9 +31,6 @@
     <div class="banner-nik-container{{ module }} {{ class }}">
       <div class="banner-nik-inner{{ module }}">
         {{ text }}
-        <span class="banner-btn-more">
-          {{ btn_more }}
-        </span>
       </div>
     </div>
   {% if link %}</a>{% endif %}

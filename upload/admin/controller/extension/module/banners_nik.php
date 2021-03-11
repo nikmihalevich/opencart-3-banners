@@ -105,14 +105,13 @@ class ControllerExtensionModuleBannersNik extends Controller {
 
         if (isset($this->request->post['bg'])) {
             $data['bg']    = $this->request->post['bg'];
-            $data['thumb'] = $this->model_tool_image->resize($this->request->post['bg'], 100, 100);
         } elseif (!empty($module_info)) {
             $data['bg']    = $module_info['bg'];
-            $data['thumb'] = $this->model_tool_image->resize($module_info['bg'], 100, 100);
         } else {
-            $data['thumb'] = $this->model_tool_image->resize('no_image.png', 100, 100);
             $data['bg']    = '';
         }
+
+        $data['thumb'] = $data['bg'] ? $this->model_tool_image->resize($data['bg'], 100, 100) : $this->model_tool_image->resize('no_image.png', 100, 100);
 
         if (isset($this->request->post['link'])) {
             $data['link'] = $this->request->post['link'];
