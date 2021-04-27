@@ -8,7 +8,6 @@ class ControllerExtensionModuleBannersNik extends Controller {
 		$this->load->model('tool/image');
 
 		$data = $setting;
-//		var_dump($setting);
 
         if ($this->request->server['HTTPS']) {
             $data['image'] = $this->config->get('config_ssl') . 'image/' . $setting['bg'];
@@ -17,8 +16,7 @@ class ControllerExtensionModuleBannersNik extends Controller {
         }
 
         $data['text'] = html_entity_decode($setting['text']);
-
-
+        
 		$data['module'] = $module++;
 
         return $this->load->view('extension/module/banners_nik', $data);

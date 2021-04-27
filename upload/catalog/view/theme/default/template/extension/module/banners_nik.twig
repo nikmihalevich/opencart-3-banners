@@ -15,7 +15,7 @@
     text-decoration: none;
     text-underline: none;
   }
-  .banner-nik-inner{{ module }} {
+  .banner-nik-inner {
     background-size: cover;
     background-image: url('{{ image }}');
     background-repeat: no-repeat;
@@ -24,22 +24,28 @@
     height: 100%;
     color: #000;
   }
-  .banner-nik-inner{{ module }} img {
+  .banner-nik-inner img {
     max-width: 100%;
   }
 </style>
 
-<div class="row">
-  {% if link %}<a href="{{ link }}">{% endif %}
-    <div class="banner-nik-container{{ module }} {{ class }}">
-      <div class="banner-nik-inner{{ module }}">
-        {% if display_heading %}
-          <p class="banner-nik-heading{{ module }}">{{ name }}</p>
-        {% endif %}
-        <div class="banner-nik-content{{ module }}">
-          {{ text }}
-        </div>
+<div class="banner-nik-super">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        {% if link %}<a href="{{ link }}">{% endif %}
+          <div class="banner-nik-container{{ module }} {{ class }}">
+            <div class="banner-nik-inner">
+              {% if display_heading %}
+                <p class="banner-nik-heading">{{ name }}</p>
+              {% endif %}
+              <div class="banner-nik-content">
+                {{ text }}
+              </div>
+            </div>
+          </div>
+          {% if link %}</a>{% endif %}
       </div>
     </div>
-  {% if link %}</a>{% endif %}
+  </div>
 </div>
